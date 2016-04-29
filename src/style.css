@@ -97,16 +97,29 @@ body{
 	flex-flow:row wrap;
 }
 
+.loader{
+	text-align: center;
+	margin:0 auto;
+	width:20%;
+}
+
 .article-bg{
 	/*background-color:#333;*/
 	outline:1px solid #fff;
-	overflow: hidden;
 	text-align: center;
+	background-repeat: no-repeat;
+	background-size:cover;
+	text-decoration: none;
 }
 
-.article-image	{
-	object-fit: cover;
-	max-width:700px;
+.abstract{
+	color:#fff;
+	padding:20px 10px;
+	background-color:rgba(0,0,0,0.7);
+	line-height:20px;
+	text-align: left;
+
+	align-self: flex-end;
 }
 
 .outter-square{
