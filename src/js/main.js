@@ -4,12 +4,15 @@ $(document).ready(function(){ // When Document is Ready
   $('select').on('change', function(){ // On Dropdown Button Change
 
     $('.header').addClass("minimized"); // Add class to shrink header
-    
-    // Grabs Category value from Dropdown Button
-    var category = $('.category :selected').val();
 
+    $content.children().remove(); // Remove previous content
+    
     // Shows Loader
     $content.append('<div class="loader"><img src="assets/images/ajax-loader.gif"></div>');
+
+
+    // Grabs Category value from Dropdown Button
+    var category = $('.category :selected').val();
 
     $.getJSON( // NYT API for Article List
       'http://api.nytimes.com/svc/topstories/v1/'+ category +'.json?api-key=f157b849d96a2a6c75cf671b868049fd:9:75124091'

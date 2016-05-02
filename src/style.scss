@@ -51,13 +51,36 @@
 
 }
 
+/* Variable - Background Color */
+$background-color:#000;
+
+/* Variable - Fonts */
+$font-size:16px;
+$font-color:#fff;
+$font-family:'OpenSans', sans-serif;
+$line-height:20px;
+
+
+/* Media Query Mixins */
+@Mixins tablet{
+	@media (min-width: $tablet-width){
+		@content;
+	}
+}
+
+@Mixins desktop{
+	@media (min-width: $desktop-width){
+		@content;
+	}
+}
+
 /* General Styles */
-html{font-size:16px;}
+html{font-size:$font-size;}
 
 body{
-	font-family:'OpenSans', sans-serif;
-	background-color:#000;
-	color:#fff;
+	font-family:$font-family;
+	background-color:$background-color;
+	color:$font-color;
 }
 
 /* Header Styles */
@@ -68,28 +91,30 @@ body{
 	display: flex;
 	flex-flow: column nowrap;
 	align-items:center;
-}
 
-.header .logo{
-	margin: 10% 0;
-}
+	.logo{
+		margin: 10% 0;
+	}
 
-.header p{
-	text-align: center;
-	margin: 0 0 15px 0;
-}
+	p{
+		text-align: center;
+		margin: 0 0 15px 0;
+	}
 
-.header select{
-	width:130px;
-	margin-bottom:30px;
+	select{
+		width:130px;
+		margin-bottom:30px;
+	}
+
 }
 
 .minimized{
 	height:40vh;
-}
 
-.minimized .logo{
-	height:120px;
+	.logo{
+		height:120px;
+	}
+
 }
 
 /* Content Styles */
@@ -102,10 +127,11 @@ body{
 	text-align: center;
 	margin:0 auto;
 	max-width:20%;
-}
 
-.loader img{
-	max-width:50px;
+	img{
+		max-width:50px;
+	}
+
 }
 
 
@@ -131,12 +157,13 @@ body{
 .outter-square{
 	position: relative;
 	flex:1 0 100%;
-}
 
-.outter-square:before{
-	content:"";
-	padding-top:100%;
-	display: block;
+	&:before{
+		content:"";
+		padding-top:100%;
+		display: block;
+	}
+
 }
 
 .inner-square{
@@ -187,20 +214,18 @@ body{
 
 	.minimized{
 		height:15vh;
+	
+		.logo{
+			height:70px;
+			margin: 15px 80px 15px 0;
+		}
 	}
 
-	.minimized .logo{
-		height:70px;
-		margin: 15px 80px 15px 0;
-	}
-	
 	/* Content Styles */
 	.outter-square{
 	position: relative;
 	flex:1 0 33%;
 	}
-	
-
 }
 
 /* Screen size bigger than 1000px */
@@ -219,11 +244,11 @@ body{
 
 	.minimized{
 		height:15vh;
-	}
-
-	.minimized .logo{
-		height:70px;
-		margin: 15px 80px 15px 0;
+		
+		.logo{
+			height:70px;
+			margin: 15px 80px 15px 0;
+		}
 	}
 
 	/* Footer Styles */	
