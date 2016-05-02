@@ -58,7 +58,7 @@ $background-color:#000;
 $font-size:16px;
 $font-color:#fff;
 $font-family:'OpenSans', sans-serif;
-$line-height:20px;
+$line-height:25px;
 
 /* Variable - Responsive Size */
 $tablet-width:600px;
@@ -118,6 +118,10 @@ body{
 		form{ margin-left:5%; }
 	}
 
+	@include desktop{
+		margin:0;	
+	}
+
 }
 
 .minimized{
@@ -129,8 +133,17 @@ body{
 
 	@include tablet{
 
-		height:15vh;
+		height:20vh;
 	
+		.logo{
+			height:70px;
+			margin: 15px 80px 15px 0;
+		}
+	}
+
+	@include desktop{
+		height:15vh;
+		
 		.logo{
 			height:70px;
 			margin: 15px 80px 15px 0;
@@ -163,10 +176,9 @@ body{
 	}
 
 .article-bg{	
-	
-	text-align: center;
 	background-repeat: no-repeat;
 	background-size:cover;
+	background-position: center center;
 	text-decoration: none;
 }
 
@@ -191,9 +203,13 @@ body{
 	}
 
 	@include tablet{	
-		position: relative;
 		flex:1 0 33%;
 		max-width:33%;
+	}
+
+	@include desktop{
+		flex:1 0 25%;
+		max-width:25%;
 	}
 
 }
@@ -228,34 +244,8 @@ body{
 	display: flex;
 	flex-flow: column wrap;
 	justify-content: center;
-}
 
-/* Screen size bigger than 1000px */
-@media all and (min-width:1000px){
-	
-	/* Header Styles */
-	.header{
-		margin:0;
-	}
-
-	/*Content Styles */
-	.outter-square{
-		position: relative;
-		flex:1 0 25%;
-		max-width:25%;
-	}
-
-	.minimized{
-		height:15vh;
-		
-		.logo{
-			height:70px;
-			margin: 15px 80px 15px 0;
-		}
-	}
-
-	/* Footer Styles */	
-	.footer{
-		text-align: left;
+	@include desktop{
+		text-align:left;
 	}
 }
