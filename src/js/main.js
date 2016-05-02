@@ -25,31 +25,34 @@ $(document).ready(function(){ // When Document is Ready
       var newsItems = " ";
       var articleNum = 0;
 
-      for(i=0; articleNum < 12; i++){ //Pulling the info from JSON 12 times
-
+      $.each(data.results, function(articleNum){
+        console.log(articleNum);
         //Checks if Multimedia section is empty
-        if(data.results[i].multimedia !== ""){
-        console.log(data.results[i].multimedia[2].url);
+        if(data.results[articleNum].multimedia !== "" && articleNum < 12){
         newsItems += '<div class="article outter-square">';
-        newsItems += '<a class="article-bg inner-square" href="'+ data.results[i].url +'" target="_blank"';
-        newsItems += 'style="background-image:url(\'' + data.results[i].multimedia[4].url + '\')">';
-        newsItems += '<p class="abstract">' + data.results[i].abstract + '</p>';
+        newsItems += '<a class="article-bg inner-square" href="'+ data.results[articleNum].url +'" target="_blank"';
+        newsItems += 'style="background-image:url(\'' + data.results[articleNum].multimedia[4].url + '\')">';
+        newsItems += '<p class="abstract">' + data.results[articleNum].abstract + '</p>';
         newsItems += '</a>';
         newsItems += '</div>';
         
         articleNum++; //Keep tracks of how many articles with images
 
-        }
+        return articleNum;
+        };
 
-      };
+      });
 
-      // Add news item to the content area
-      $content.append(newsItems);
+        // Add news item to the content area
+        $content.append(newsItems);
 
-    });
+    }).fail(function(){
 
+        $content.children().remove(); 
+        $content.append('<div class="fail"><p>Failed to retrieve articles from New York Times</p></div>')
+    })
 
-  })
+  });
   
 
 });

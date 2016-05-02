@@ -15,17 +15,17 @@ gulp.task('browser-sync', function() {
     });
 
     //watch tasks
-    gulp.watch('./src/*.js',['uglify']);
-    gulp.watch('./src/*.scss',['sass']);
+    gulp.watch('./src/js/**/*.js',['uglify']);
+    gulp.watch('./src/**/*.scss',['sass']);
     gulp.watch(['./build/**/*.*', './src/*.*']).on('change', browserSync.reload);
 });
 
 
 //(Uglify) the js files
 gulp.task('uglify', function(){
-	gulp.src('./src/*.js')// what file do we want gulp to consume
+	gulp.src('./src/js/**/*.js')// what file do we want gulp to consume
 		.pipe(uglify()) // call the uglify function on these files
-		.pipe(gulp.dest('./build')) //where do we put the result	
+		.pipe(gulp.dest('./build/js')) //where do we put the result	
 });
 
 

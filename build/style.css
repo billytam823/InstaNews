@@ -1,0 +1,165 @@
+/* Font Face Import */
+@font-face {
+  font-family: 'OpenSans';
+  src: url("assets/fonts/opensans-bold-webfont.eot");
+  src: url("assets/fonts/opensans-bold-webfont.eot?#iefix") format("embedded-opentype"), url("assets/fonts/opensans-bold-webfont.woff2") format("woff2"), url("assets/fonts/opensans-bold-webfont.woff") format("woff"), url("assets/fonts/opensans-bold-webfont.ttf") format("truetype"), url("assets/fonts/opensans-bold-webfont.svg#open_sansbold") format("svg");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("assets/fonts/opensans-bolditalic-webfont.eot");
+  src: url("assets/fonts/opensans-bolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("assets/fonts/opensans-bolditalic-webfont.woff2") format("woff2"), url("assets/fonts/opensans-bolditalic-webfont.woff") format("woff"), url("assets/fonts/opensans-bolditalic-webfont.ttf") format("truetype"), url("assets/fonts/opensans-bolditalic-webfont.svg#open_sansbold_italic") format("svg");
+  font-weight: 600;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("assets/fonts/opensans-light-webfont.eot");
+  src: url("assets/fonts/opensans-light-webfont.eot?#iefix") format("embedded-opentype"), url("assets/fonts/opensans-light-webfont.woff2") format("woff2"), url("assets/fonts/opensans-light-webfont.woff") format("woff"), url("assets/fonts/opensans-light-webfont.ttf") format("truetype"), url("assets/fonts/opensans-light-webfont.svg#open_sanslight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("opensans-lightitalic-webfont.eot");
+  src: url("assets/fonts/opensans-lightitalic-webfont.eot?#iefix") format("embedded-opentype"), url("assets/fonts/opensans-lightitalic-webfont.woff2") format("woff2"), url("assets/fonts/opensans-lightitalic-webfont.woff") format("woff"), url("assets/fonts/opensans-lightitalic-webfont.ttf") format("truetype"), url("assets/fonts/opensans-lightitalic-webfont.svg#open_sanslight_italic") format("svg");
+  font-weight: normal;
+  font-style: italic; }
+
+/* Variable - Background Color */
+/* Variable - Fonts */
+/* Variable - Responsive Size */
+/* Media Query Mixins */
+/* General Styles */
+html {
+  font-size: 16px; }
+
+body {
+  font-family: "OpenSans", sans-serif;
+  background-color: #000;
+  color: #fff; }
+
+/* Header Styles */
+.header {
+  height: 80vh;
+  padding: 0 5%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center; }
+  .header .logo {
+    margin: 10% 0; }
+  .header p {
+    text-align: center;
+    margin: 0 0 15px 0; }
+  .header select {
+    width: 130px;
+    margin-bottom: 30px; }
+  @media (min-width: 600px) {
+    .header {
+      flex-flow: row nowrap;
+      max-width: 400px;
+      margin: 0 auto; }
+      .header form {
+        margin-left: 5%; } }
+
+.minimized {
+  height: 40vh; }
+  .minimized .logo {
+    height: 120px; }
+  @media (min-width: 600px) {
+    .minimized {
+      height: 15vh; }
+      .minimized .logo {
+        height: 70px;
+        margin: 15px 80px 15px 0; } }
+
+/* Content Styles */
+.content {
+  display: flex;
+  flex-flow: row wrap; }
+
+.loader {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 20%; }
+  .loader img {
+    max-width: 50px; }
+
+.fail {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto; }
+
+.article-bg {
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-decoration: none; }
+
+.abstract {
+  color: #fff;
+  padding: 20px 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  line-height: 20px;
+  text-align: left;
+  align-self: flex-end; }
+
+.outter-square {
+  position: relative;
+  flex: 1 0 100%; }
+  .outter-square:before {
+    content: "";
+    padding-top: 100%;
+    display: block; }
+  @media (min-width: 600px) {
+    .outter-square {
+      position: relative;
+      flex: 1 0 33%;
+      max-width: 33%; } }
+
+.inner-square {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  /* Flex Parent to center text */
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center; }
+
+.collapsed {
+  height: 10vh; }
+
+/* Footer Styles */
+.footer {
+  height: 20vh;
+  max-height: 40px;
+  padding: 0 5%;
+  color: #c2c2c2;
+  text-align: center;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center; }
+
+/* Screen size bigger than 1000px */
+@media all and (min-width: 1000px) {
+  /* Header Styles */
+  .header {
+    margin: 0; }
+  /*Content Styles */
+  .outter-square {
+    position: relative;
+    flex: 1 0 25%;
+    max-width: 25%; }
+  .minimized {
+    height: 15vh; }
+    .minimized .logo {
+      height: 70px;
+      margin: 15px 80px 15px 0; }
+  /* Footer Styles */
+  .footer {
+    text-align: left; } }

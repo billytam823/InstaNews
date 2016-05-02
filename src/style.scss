@@ -60,15 +60,19 @@ $font-color:#fff;
 $font-family:'OpenSans', sans-serif;
 $line-height:20px;
 
+/* Variable - Responsive Size */
+$tablet-width:600px;
+$desktop-width:1000px;
+
 
 /* Media Query Mixins */
-@Mixins tablet{
+@mixin tablet{
 	@media (min-width: $tablet-width){
 		@content;
 	}
 }
 
-@Mixins desktop{
+@mixin desktop{
 	@media (min-width: $desktop-width){
 		@content;
 	}
@@ -106,6 +110,14 @@ body{
 		margin-bottom:30px;
 	}
 
+	@include tablet {
+		flex-flow: row nowrap;
+		max-width:400px;
+		margin:0 auto;
+
+		form{ margin-left:5%; }
+	}
+
 }
 
 .minimized{
@@ -113,6 +125,16 @@ body{
 
 	.logo{
 		height:120px;
+	}
+
+	@include tablet{
+
+		height:15vh;
+	
+		.logo{
+			height:70px;
+			margin: 15px 80px 15px 0;
+		}
 	}
 
 }
@@ -134,10 +156,14 @@ body{
 
 }
 
+.fail{
+	width:80%;
+	text-align:center;
+	margin:0 auto;	
+	}
 
-.article-bg{
-	/*background-color:#333;*/
-	outline:1px solid #fff;
+.article-bg{	
+	
 	text-align: center;
 	background-repeat: no-repeat;
 	background-size:cover;
@@ -162,6 +188,12 @@ body{
 		content:"";
 		padding-top:100%;
 		display: block;
+	}
+
+	@include tablet{	
+		position: relative;
+		flex:1 0 33%;
+		max-width:33%;
 	}
 
 }
@@ -198,36 +230,6 @@ body{
 	justify-content: center;
 }
 
-/* Screen size biger than 600px */
-@media all and (min-width: 600px){
-	
-	/* Header Styles */
-	.header{
-		flex-flow: row nowrap;
-		max-width:400px;
-		margin:0 auto;
-	}
-
-	.header form{
-		margin-left:5%;
-	}
-
-	.minimized{
-		height:15vh;
-	
-		.logo{
-			height:70px;
-			margin: 15px 80px 15px 0;
-		}
-	}
-
-	/* Content Styles */
-	.outter-square{
-	position: relative;
-	flex:1 0 33%;
-	}
-}
-
 /* Screen size bigger than 1000px */
 @media all and (min-width:1000px){
 	
@@ -240,6 +242,7 @@ body{
 	.outter-square{
 		position: relative;
 		flex:1 0 25%;
+		max-width:25%;
 	}
 
 	.minimized{
