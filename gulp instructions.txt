@@ -1,3 +1,0 @@
-npm i --save-dev gulp --no-bin-link
-gitignore puts the files u want to ignore
-git init 
