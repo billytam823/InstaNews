@@ -1,0 +1,97 @@
+/* Content Styles */
+.content{
+	display: flex;
+	flex-flow:row wrap;
+}
+
+.loader{
+	text-align: center;
+	margin:0 auto;
+	max-width:20%;
+
+	img{
+		max-width:50px;
+	}
+
+}
+
+.fail{
+	width:80%;
+	text-align:center;
+	margin:0 auto;	
+	}
+
+.article-bg{	
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-position: center center;
+	text-decoration: none;
+	
+	@include desktop{
+		&:hover .abstract{
+			top:0px;
+		}
+	}
+}
+
+.abstract{
+	color:#fff;
+	padding:20px 10px;
+	background-color:rgba(0,0,0,0.7);
+	line-height:20px;
+	text-align: left;
+
+	align-self: flex-end;
+	position:relative;
+
+	-webkit-transition: $transition-time;
+  	-moz-transition: $transition-time;
+  	-ms-transition: $transition-time;
+  	-o-transition: $transition-time;
+  	transition: $transition-time;
+
+  	@include desktop{
+  		top:250px;
+  	} 
+}
+
+.outter-square{
+	position: relative;
+	flex:1 0 100%;
+	overflow:hidden;
+
+	&:before{
+		content:"";
+		padding-top:100%;
+		display: block;
+	}
+
+	@include tablet{	
+		flex:1 0 33%;
+		max-width:33%;
+	}
+
+	@include desktop{
+		flex:1 0 25%;
+		max-width:25%;
+	}
+
+}
+
+.inner-square{
+	position: absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	text-align: center;
+	
+	/* Flex Parent to center text */
+	display: flex;
+	flex-flow: row nowrap;
+	align-items:center;
+	justify-content: center;
+}
+.collapsed{
+	height:10vh;
+}

@@ -1,0 +1,64 @@
+/* Header Styles */
+.header{
+	height:80vh;
+	padding:0 5%;
+
+	display: flex;
+	flex-flow: column nowrap;
+	align-items:center;
+
+	.logo{
+		margin: 10% 0;
+	}
+
+	p{
+		text-align: center;
+		margin: 0 0 15px 0;
+	}
+
+	select{
+		width:130px;
+		margin-bottom:30px;
+	}
+
+	@include tablet {
+		flex-flow: row nowrap;
+		max-width:400px;
+		margin:0 auto;
+
+		form{ margin-left:5%; }
+	}
+
+	@include desktop{
+		margin:0;	
+	}
+
+}
+
+.minimized{
+	height:40vh;
+
+	.logo{
+		height:120px;
+	}
+
+	@include tablet{
+
+		height:20vh;
+	
+		.logo{
+			height:70px;
+			margin: 15px 80px 15px 0;
+		}
+	}
+
+	@include desktop{
+		height:15vh;
+		
+		.logo{
+			height:70px;
+			margin: 15px 80px 15px 0;
+		}
+	}
+
+}

@@ -23,23 +23,30 @@ $(document).ready(function(){ // When Document is Ready
       $content.children().remove(); // Remove previous content
 
       var newsItems = " ";
-      var articleNum = 0;
+      var articleNum = 0; //Keep tracks of how many articles with images
+      var articles = 0; //Use for cycling through the amount of articles
 
-      $.each(data.results, function(articleNum){
-        console.log(articleNum);
+      $.each(data.results, function(){
+        console.log(articles);
         //Checks if Multimedia section is empty
-        if(data.results[articleNum].multimedia !== "" && articleNum < 12){
+        if(data.results[articles].multimedia !== "" && articleNum < 12){
         newsItems += '<div class="article outter-square">';
-        newsItems += '<a class="article-bg inner-square" href="'+ data.results[articleNum].url +'" target="_blank"';
-        newsItems += 'style="background-image:url(\'' + data.results[articleNum].multimedia[4].url + '\')">';
-        newsItems += '<p class="abstract">' + data.results[articleNum].abstract + '</p>';
+        newsItems += '<a class="article-bg inner-square" href="'+ data.results[articles].url +'" target="_blank"';
+        newsItems += 'style="background-image:url(\'' + data.results[articles].multimedia[4].url + '\')">';
+        newsItems += '<p class="abstract">' + data.results[articles].abstract + '</p>';
         newsItems += '</a>';
         newsItems += '</div>';
         
-        articleNum++; //Keep tracks of how many articles with images
+        articles++;
+        articleNum++;
 
         return articleNum;
-        };
+
+        }else{ //skip to next article if it doesnt have multimedia
+
+          articles++;
+        
+        }
 
       });
 

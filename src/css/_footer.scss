@@ -1,0 +1,17 @@
+/* Footer Styles */
+.footer{
+	height:20vh;
+
+	max-height:40px;
+	padding:0 5%;
+	color:#c2c2c2;
+	text-align: center;
+
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+
+	@include desktop{
+		text-align:left;
+	}
+}
