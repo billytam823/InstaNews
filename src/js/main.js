@@ -1,7 +1,7 @@
-var $content = $('.content');
+let $content = $('.content');
 
-$(document).ready(function(){ // When Document is Ready
-  $('select').on('change', function(){ // On Dropdown Button Change
+$(document).ready(() => { // When Document is Ready
+  $('select').on('change', () => { // On Dropdown Button Change
 
     $('.header').addClass("minimized"); // Add class to shrink header
 
@@ -12,24 +12,25 @@ $(document).ready(function(){ // When Document is Ready
 
 
     // Grabs Category value from Dropdown Button
-    var category = $('.category :selected').val();
+    let category = $('.category :selected').val();
 
     $.getJSON( // NYT API for Article List
       'http://api.nytimes.com/svc/topstories/v1/'+ category +'.json?api-key=f157b849d96a2a6c75cf671b868049fd:9:75124091'
       )
 
-    .done(function(data){ // After List is done Retrieving
+    .done((data) => { // After List is done Retrieving
 
       $content.children().remove(); // Remove previous content
 
-      var newsItems = " ";
-      var articleNum = 0; //Keep tracks of how many articles with images
-      var articles = 0; //Use for cycling through the amount of articles
+      let newsItems = " ";
+      let articleNum = 0; //Keep tracks of how many articles with images
+      let articles = 0; //Use for cycling through the amount of articles
 
-      $.each(data.results, function(){
+      $.each(data.results, () => {
+        console.log(data.results[articles].multimedia.length);
         console.log(articles);
         //Checks if Multimedia section is empty
-        if(data.results[articles].multimedia !== "" && articleNum < 12){
+        if(data.results[articles].multimedia !== "" && data.results[articles].multimedia.length === 5 && articleNum < 12){
         newsItems += '<div class="article outter-square">';
         newsItems += '<a class="article-bg inner-square" href="'+ data.results[articles].url +'" target="_blank"';
         newsItems += 'style="background-image:url(\'' + data.results[articles].multimedia[4].url + '\')">';
