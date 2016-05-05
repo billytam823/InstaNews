@@ -12,7 +12,7 @@ $(document).ready(function () {
         $content.children().remove(); // Remove previous content
 
         // Shows Loader
-        $content.append('<div class="loader"><img src="assets/images/ajax-loader.gif"></div>');
+        $content.append('<div class="loader"><img src="build/assets/images/ajax-loader.gif"></div>');
 
         // Grabs Category value from Dropdown Button
         var category = $('.category :selected').val();
@@ -23,13 +23,14 @@ $(document).ready(function () {
 
             $content.children().remove(); // Remove previous content
 
+            articleFilter();
+
             var newsItems = " ";
             var articleNum = 0; //Keep tracks of how many articles with images
             var articles = 0; //Use for cycling through the amount of articles
 
             $.each(data.results, function () {
-                console.log(data.results[articles].multimedia.length);
-                console.log(articles);
+
                 //Checks if Multimedia section is empty
                 if (data.results[articles].multimedia !== "" && data.results[articles].multimedia.length === 5 && articleNum < 12) {
                     newsItems += '<div class="article outter-square">';
@@ -41,8 +42,6 @@ $(document).ready(function () {
 
                     articles++;
                     articleNum++;
-
-                    return articleNum;
                 } else {
                     //skip to next article if it doesnt have multimedia
 
