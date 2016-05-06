@@ -11,7 +11,7 @@ gulp.task('default', ['uglify','sass','browser-sync']);
 gulp.task('browser-sync', function() {
     browserSync.init({
     	open: false,
-        proxy: "192.168.33.10/project2/"
+        proxy: "192.168.33.10/billys-project/"
     });
 
     //watch tasks
@@ -25,7 +25,7 @@ gulp.task('browser-sync', function() {
 gulp.task('uglify', function(){
 	gulp.src('./src/js/**/*.js')// what file do we want gulp to consume
 		.pipe(uglify()) // call the uglify function on these files
-		.pipe(gulp.dest('./build/js')) //where do we put the result	
+		.pipe(gulp.dest('./build/js')) //where do we put the result
 });
 
 
