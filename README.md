@@ -3,7 +3,7 @@
 https://billytam823.github.io/InstaNews/
 A single page site that pulls news from New York Times.
 
-InstaNews usesthe New York Times API to feed news to the site.
+InstaNews uses the New York Times API to feed news to the site.
 A dropdown menu to select which category of news to display.
 
 ##This Project Uses:
