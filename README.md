@@ -1,6 +1,7 @@
 # InstaNews - New York Times API
 
 https://billytam823.github.io/InstaNews-API-JSON/
+
 A single page site that pulls news from New York Times.
 
 InstaNews uses the New York Times API to feed news to the site.
