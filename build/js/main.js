@@ -18,7 +18,7 @@ $(document).ready(function () {
         var category = $('.category :selected').val();
 
         $.getJSON( // NYT API for Article List
-        'http://api.nytimes.com/svc/topstories/v1/' + category + '.json?api-key=e2d7974ddd6345c8bc71b465f6fbc745').done(function (data) {
+        'https://api.nytimes.com/svc/topstories/v1/' + category + '.json?api-key=e2d7974ddd6345c8bc71b465f6fbc745').done(function (data) {
             // After List is done Retrieving
 
             $content.children().remove(); // Remove previous content
