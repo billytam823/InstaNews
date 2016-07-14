@@ -22,8 +22,6 @@ $(document).ready(() => { // When Document is Ready
 
       $content.children().remove(); // Remove previous content
 
-      articleFilter();
-
       let newsItems = " ";
       let articleNum = 0; //Keep tracks of how many articles with images
       let articles = 0; //Use for cycling through the amount of articles
